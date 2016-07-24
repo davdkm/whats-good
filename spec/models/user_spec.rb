@@ -2,18 +2,18 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @stub_user = build_stubbed(:post)
+    @stub_user = build_stubbed(:user)
   end
 
-  it "has a name" do
-    expect(@stub_post.title).to eq('MyString')
+  it "has a user name" do
+    expect(@stub_user.username).to eq('testUser')
   end
 
-  it "has some content" do
-    expect(@stub_post.content).to eq('MyText')
+  it "has some email" do
+    expect(@stub_user.email).to eq('test@example.com')
   end
 
-  it "has a post date time" do
-    expect(@stub_post.post_date).to eq('2016-07-24 13:38:12')
+  it "has a password" do
+    expect(@stub_user.password).not_to be_empty
   end
 end
