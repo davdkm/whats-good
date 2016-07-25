@@ -48,7 +48,6 @@ group :development, :test do
   gem "launchy"
   gem "rack_session_access"
   gem "selenium-webdriver"
-  gem "better_errors"
   gem "binding_of_caller"
   gem "factory_girl_rails"
   gem "simplecov"
