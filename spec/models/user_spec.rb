@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   end
 
   it "has some email" do
-    expect(@stub_user.email).to eq('test@example.com')
+    expect(@stub_user.email).to eq('testuser@example.com')
   end
 
   it "has a password" do
