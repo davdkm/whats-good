@@ -1,3 +1,9 @@
 <div class="container">
   Posts home
+
+  <ul>
+    <li ng-repeat="post in home.posts">
+      {{ post.title }} | {{ post.author.username }}
+    </li>
+  </ul>
 </div>

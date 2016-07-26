@@ -1,5 +1,7 @@
-function HomeController() {
+function HomeController(posts) {
+  var ctrl = this;
 
+  ctrl.posts = posts.data;
 }
 
 angular
