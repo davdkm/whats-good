@@ -1,1 +1,4 @@
 <a ui-sref="post({ id: item.id })">{{ item.data.title }}</a> | <a ui-sref="{{ item.data.author.id }}">{{ item.data.author.username }}</a>
+<div>
+  submitted at {{ item.data.created_at | date: 'short' }}
+</div>
