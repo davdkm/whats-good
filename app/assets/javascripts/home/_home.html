@@ -3,7 +3,7 @@
 
   <ul>
     <li ng-repeat="post in home.posts">
-      {{ post.title }} | {{ post.author.username }}
+      <a ui-sref="post({ id: post.id})">{{ post.title }}</a> | {{ post.author.username }}
     </li>
   </ul>
 </div>

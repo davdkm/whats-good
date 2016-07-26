@@ -4,6 +4,10 @@ function PostsService($http) {
   ctrl.getPosts = function () {
     return $http.get('/posts.json');
   }
+
+  ctrl.getPost = function (id) {
+    return $http.get('/posts/' + id + '.json');
+  }
 }
 
 angular
