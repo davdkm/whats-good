@@ -18,6 +18,16 @@ angular
               return PostsService.getPosts();
             }
           }
+        })
+        .state('post', {
+          url: '/posts/:id',
+          templateUrl: 'posts/_post.html',
+          controller: 'PostController as post',
+          resolve: {
+            post: function (PostsService, $stateParams) {
+              return PostsService.getPost($stateParams.id)
+            }
+          }
         });
 
       $urlRouterProvider.otherwise('home');
