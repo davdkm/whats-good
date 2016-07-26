@@ -14,7 +14,7 @@
     created_at: post_submission_date,
     )
   User.create(
-    name: Faker::Internet.user_name,
+    username: Faker::Internet.user_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password(8)
     )
