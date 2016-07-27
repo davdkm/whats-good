@@ -25,7 +25,17 @@ angular
           controller: 'PostController as post',
           resolve: {
             post: function (PostsService, $stateParams) {
-              return PostsService.getPost($stateParams.id)
+              return PostsService.getPost($stateParams.id);
+            }
+          }
+        })
+        .state('user', {
+          url: '/users/:id',
+          templateUrl: 'users/_user.html',
+          controller: 'UserController as user',
+          resolve: {
+            user: function (UsersService, $stateParams) {
+              return UsersService.getUser($statePararms.id);
             }
           }
         });
