@@ -39,8 +39,8 @@ angular
               return UsersService.getUser($stateParams.id);
             }
           }
-        })
-        
+        });
+
       $urlRouterProvider.otherwise('home');
     }
   ])
