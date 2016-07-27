@@ -25,7 +25,7 @@ angular
           controller: 'PostController as post',
           resolve: {
             post: function (PostsService, $stateParams) {
-              return PostsService.getPost($stateParams.id);
+              return PostsService.getPost($stateParams.id)
             }
           }
         })
@@ -35,7 +35,7 @@ angular
           controller: 'UserController as user',
           resolve: {
             user: function (UsersService, $stateParams) {
-              return UsersService.getUser($statePararms.id);
+              return UsersService.getUser($stateParams.id);
             }
           }
         });
