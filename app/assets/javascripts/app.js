@@ -20,9 +20,9 @@ angular
             }
           }
         })
-        .state('post', {
+        .state('home.post', {
           url: '/posts/:id',
-          templateUrl: 'posts/_post.html',
+          templateUrl: 'home/posts/_post.html',
           controller: 'PostController as post',
           resolve: {
             post: function (PostsService, $stateParams) {
@@ -30,17 +30,17 @@ angular
             }
           }
         })
-        .state('user', {
+        .state('home.user', {
           url: '/users/:id',
-          templateUrl: 'users/_user.html',
+          templateUrl: 'home/users/_user.html',
           controller: 'UserController as user',
           resolve: {
             user: function (UsersService, $stateParams) {
               return UsersService.getUser($stateParams.id);
             }
           }
-        });
-
+        })
+        
       $urlRouterProvider.otherwise('home');
     }
   ])

@@ -3,7 +3,7 @@
 <h4>Posts submitted:</h4>
 <ul>
   <li ng-repeat="post in user.data.posts">
-    <a ui-sref="post({ id: post.id })">{{ post.title }}</a>
+    <a ui-sref="home.post({ id: post.id })">{{ post.title }}</a>
     <div>
       submitted at {{ post.created_at | date: 'short' }}
     </div>
