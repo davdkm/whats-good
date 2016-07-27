@@ -67,3 +67,7 @@ group :development do
 end
 
 gem 'faker'
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
