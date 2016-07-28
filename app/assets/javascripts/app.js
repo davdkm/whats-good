@@ -39,6 +39,11 @@ angular
               return UsersService.getUser($stateParams.id);
             }
           }
+        })
+        .state('home.login', {
+          url: '/login',
+          templateUrl: 'home/auth/_login.html',
+          controller: 'AuthController'
         });
 
       $urlRouterProvider.otherwise('home');
