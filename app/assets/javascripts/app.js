@@ -44,6 +44,11 @@ angular
           url: '/login',
           templateUrl: 'home/auth/_login.html',
           controller: 'AuthController'
+        })
+        .state('home.register', {
+          url: '/register',
+          templateUrl: 'home/auth/_register.html',
+          controller: 'AuthController'
         });
 
       $urlRouterProvider.otherwise('home');
