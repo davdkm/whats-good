@@ -11,10 +11,12 @@ function PostsService($http, $state) {
 
   ctrl.addPost = function (post) {
     return $http.post('/posts.json', post)
-    .then(function (res) {
-      $state.go('home.post', {id: res.data.id});
+    .success(function (res) {
+      $state.go('home.post', { id: res.id });
     });
-  }
+    ctrl.title = '';
+    ctrl.content = '';
+  };
 }
 
 angular

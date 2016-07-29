@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1>Create Post</h1>
+
+  <form name='newPostForm' ng-submit="createPost()">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Title" ng-model="post.title" name="title">
+    </div>
+    <div class="input-group">
+      <input type="text_area" class="form-control" placeholder="Content" ng-model="post.content" name="content">
+    </div>
+    <input type="submit" class="btn btn-default" value="Submit Post">
+  </form>
+</div>
