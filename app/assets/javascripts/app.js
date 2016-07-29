@@ -30,6 +30,11 @@ angular
             }
           }
         })
+        .state('home.newPost', {
+          url: '/posts/new',
+          templateUrl: 'home/posts/_new.html',
+          controller: 'NewPostController as newPost'
+        })
         .state('home.user', {
           url: '/users/:id',
           templateUrl: 'home/users/_user.html',
