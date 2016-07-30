@@ -32,8 +32,11 @@ angular
         })
         .state('home.newPost', {
           url: '/posts/new',
-          templateUrl: 'home/posts/_new.html',
-          controller: 'NewPostController as newPost',
+          templateUrl: 'home/posts/_form.html',
+          controller: 'PostController as post',
+          resolve: {
+            post: function () {}
+          },
           onEnter: ['$state', 'Auth', function ($state, Auth) {
             if (Auth.isAuthenticated() === false) {
               $state.go('home.login');
@@ -42,18 +45,16 @@ angular
         })
         .state('home.editPost', {
           url: '/posts/:id/edit',
-          templateUrl: 'home/posts/_edit.html',
-          controller: 'EditPostController as editPost',
+          templateUrl: 'home/posts/_form.html',
+          controller: 'PostController as post',
           resolve: {
             post: function (PostsService, $stateParams) {
-              return PostsService.getPost($statePararms.id)
+              return PostsService.getPost($stateParams.id);
             }
           },
-          onEnter: ['$state', 'Auth', 'post', function ($state, Auth, post) {
+          onEnter: ['$state', 'Auth', function ($state, Auth) {
             if (Auth.isAuthenticated() === false) {
               $state.go('home.login');
-            } else if (post.data.author.id !== Auth.currentUser.id) {
-              $state.go('home')
             }
           }]
         })
