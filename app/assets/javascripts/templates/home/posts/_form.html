@@ -1,0 +1,12 @@
+<h1>Post Form</h1>
+<form name='postForm' ng-submit="post.save()">
+  <div class="input-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" ng-model="post.data.title" name="title">
+  </div>
+  <div class="input-group">
+    <label for="content">Content:</label>
+    <input type="text_area" class="form-control" ng-model="post.data.content" name="content">
+  </div>
+  <input type="submit" class="btn btn-default" value="Submit Post">
+</form>
