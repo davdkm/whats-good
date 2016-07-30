@@ -17,6 +17,15 @@ function PostsService($http, $state) {
     ctrl.title = '';
     ctrl.content = '';
   };
+
+  ctrl.updatePost = function (id, post) {
+    return $http.patch('/posts/' + id + '.json', post)
+    .success(function (res) {
+      $state.go('home.post', { id: res.id });
+    });
+    ctrl.title = '';
+    ctrl.content = '';
+  };
 }
 
 angular
