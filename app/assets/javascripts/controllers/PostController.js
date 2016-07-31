@@ -22,8 +22,10 @@ function PostController(post, Auth, PostsService, $stateParams) {
   ctrl.save = function () {
     if ($stateParams.id && ctrl.editPost()) {
       PostsService.updatePost($stateParams.id, ctrl.data);
-    } else {
+    } else if (!$stateParams.id) {
       PostsService.addPost(ctrl.data)
+    } else {
+      alert("Oops, you can't do that!")
     }
   }
 }
