@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -13,6 +13,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
+    render json: @post
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    @post.update(post_params)
     render json: @post
   end
 
