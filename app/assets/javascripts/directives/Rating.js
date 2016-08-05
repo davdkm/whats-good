@@ -12,6 +12,45 @@ function StarRating(ReviewsService, $state) {
       postId: '=',
       userId: '='
     },
+    link: function (scope, elem, attrs) {
+      scope.ratingConfig = {
+        max: 5
+      }
+      var maxRange = angular.isDefined(attrs.max) ? scope.$eval(attrs.max) : scope.ratingConfig.max;
+
+      scope.range = [];
+      for(var i = 1; i <= maxRange; i++ ) {
+        scope.range.push(i);
+      }
+
+      scope.$watch('value', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          scope.val = newVal;
+        }
+      });
+
+      scope.assign = function(value) {
+        if (scope.userId.id) {
+          scope.value = value;
+          ReviewsService.newReview(scope.val, scope.postId, scope.userId.id);
+        } else {
+          $state.go('home.login');
+        }
+      }
+
+      scope.enter = function(value) {
+        scope.val = value;
+      }
+
+      scope.reset = function(value) {
+        if (scope.value === undefined) {
+          scope.value = null;
+        }
+        scope.val = angular.copy(scope.value);
+      }
+      scope.reset();
+
+    },
   }
 }
 
