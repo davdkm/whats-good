@@ -7,8 +7,16 @@ function ReviewsService($http) {
       post_id: postId,
       user_id: userId
     };
-    return $http.post('/posts/' + postId + '/reviews.json', review)
+    return $http.post('/posts/' + postId + '/reviews.json', review);
   };
+
+  ctrl.editReview = function (value, reviewId, postId) {
+    var review = {
+      rating: value,
+      id: reviewId
+    };
+    return $http.patch('/posts/' + postId + '/reviews/' + reviewId + '.json', review);
+  }
 }
 
 angular
