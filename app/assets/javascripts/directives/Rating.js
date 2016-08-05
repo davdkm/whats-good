@@ -30,7 +30,7 @@ function StarRating(ReviewsService, $state) {
       });
 
       scope.assign = function(value) {
-        if (scope.userId.id) {
+        if (scope.userId && scope.userId.id) {
           scope.value = value;
           if (scope.post.user_post_review.id && scope.post.user_post_review.rating) {
             ReviewsService.editReview(scope.val, scope.post.user_post_review.id, scope.post.id)
