@@ -2,7 +2,8 @@ angular
   .module('app', [
     'ui.router',
     'templates',
-    'Devise'
+    'Devise',
+    'ngMessages'
   ])
   .config([
     '$stateProvider',
