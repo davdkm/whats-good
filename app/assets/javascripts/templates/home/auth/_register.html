@@ -11,8 +11,12 @@
       <div ng-message="email">Must be a valid email address</div>
     </div>
   </div>
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+  <div class="input-group" ng-class="{ 'has-error': form.username.$touched && form.username.$invalid }">
+    <input type="text" class="form-control" placeholder="Username" ng-model="user.username" name="username" ng-minlength="3" required="required">
+    <div ng-messages="form.username.$error" ng-if="form.username.$touched" class="alert alert-danger">
+      <div ng-message="required">Username cannot be blank</div>
+      <div ng-message="minlength">Username is too short</div>
+    </div>
   </div>
   <div class="input-group">
     <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
