@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 20160803055928) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
-    t.integer  "user_id_id"
-    t.integer  "post_id_id"
+    t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "reviews", ["post_id_id"], name: "index_reviews_on_post_id_id", using: :btree
-  add_index "reviews", ["user_id_id"], name: "index_reviews_on_user_id_id", using: :btree
+  add_index "reviews", ["post_id"], name: "index_reviews_on_post_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
