@@ -10,7 +10,7 @@ function StarRating(ReviewsService, $state) {
     scope: {
       value: '=',
       post: '=',
-      userId: '='
+      user: '='
     },
     link: function (scope, elem, attrs) {
       scope.ratingConfig = {
@@ -30,12 +30,12 @@ function StarRating(ReviewsService, $state) {
       });
 
       scope.assign = function(value) {
-        if (scope.userId && scope.userId.id) {
+        if (scope.user && scope.user.id) {
           scope.value = value;
           if (scope.post.user_post_review.id && scope.post.user_post_review.rating) {
             ReviewsService.editReview(scope.val, scope.post.user_post_review.id, scope.post.id)
           } else {
-            ReviewsService.newReview(scope.val, scope.post.id, scope.userId.id);
+            ReviewsService.newReview(scope.val, scope.post.id, scope.user.id);
           }
         } else {
           $state.go('home.login');
