@@ -13,5 +13,5 @@ class PostSerializer < ActiveModel::Serializer
     rating = Post.where(id: object.id).first.reviews.average(:rating).try {round(1)}.to_s
     rating if rating
   end
-  
+
 end
