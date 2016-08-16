@@ -8,4 +8,10 @@ class PostSerializer < ActiveModel::Serializer
     review = Review.where(post_id: object.id).where(user_id: current_user.id).first
     review if review
   end
+
+  def avg_rating
+    rating = Post.where(id: object.id).first.reviews.average(:rating).try {round(1)}.to_s
+    rating if rating
+  end
+  
 end
