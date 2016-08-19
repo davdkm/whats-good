@@ -1,8 +1,12 @@
-function PostController(post, Auth, PostsService, $stateParams) {
+function PostController(post, Auth, PostsService, $stateParams, categories) {
   var ctrl = this;
 
   if (post) {
     ctrl.data = post.data;
+  }
+
+  if (categories) {
+    ctrl.categories = categories.data;
   }
 
   var currentUser;
