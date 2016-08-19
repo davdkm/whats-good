@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.create(post_params.merge(user_id: current_user.id))
     render json: @post
   end
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:id, :title, :author, :content, :post_date, :user_id)
+      params.require(:post).permit(:id, :title, :author, :content, :post_date, :user_id, :category_id)
     end
 
 end
