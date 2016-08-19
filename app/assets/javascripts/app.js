@@ -28,7 +28,8 @@ angular
           resolve: {
             post: function (PostsService, $stateParams) {
               return PostsService.getPost($stateParams.id)
-            }
+            },
+            categories: function () {}
           }
         })
         .state('home.newPost', {
@@ -36,7 +37,10 @@ angular
           templateUrl: 'home/posts/_form.html',
           controller: 'PostController as post',
           resolve: {
-            post: function () {}
+            post: function () {},
+            categories: function (CategoriesService) {
+              return CategoriesService.getCategories();
+            }
           },
           onEnter: ['$state', 'Auth', function ($state, Auth) {
             if (Auth.isAuthenticated() === false) {
@@ -51,6 +55,9 @@ angular
           resolve: {
             post: function (PostsService, $stateParams) {
               return PostsService.getPost($stateParams.id);
+            },
+            categories: function (CategoriesService) {
+              return CategoriesService.getCategories();
             }
           },
           onEnter: ['$state', 'Auth', function ($state, Auth) {
