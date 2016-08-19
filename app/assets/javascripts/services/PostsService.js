@@ -10,7 +10,12 @@ function PostsService($http, $state) {
   };
 
   ctrl.addPost = function (post) {
-    return $http.post('/posts.json', post)
+    var postData = {
+      title: post.title,
+      content: post.content,
+      category_id: post.category
+    };
+    return $http.post('/posts.json', postData)
     .success(function (res) {
       $state.go('home.post', { id: res.id });
     });
@@ -19,7 +24,12 @@ function PostsService($http, $state) {
   };
 
   ctrl.updatePost = function (id, post) {
-    return $http.patch('/posts/' + id + '.json', post)
+    var postData = {
+      title: post.title,
+      content: post.content,
+      category_id: post.category
+    };
+    return $http.patch('/posts/' + id + '.json', postData)
     .success(function (res) {
       $state.go('home.post', { id: res.id });
     });
