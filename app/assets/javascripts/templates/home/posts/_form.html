@@ -15,5 +15,14 @@
       <div ng-message="required">Content cannot be blank</div>
     </div>
   </div>
+
+  <div class="input-group">
+    <div ng-repeat="category in post.categories">
+      <div class="input-group label label-default">
+        <input type="radio" ng-model="post.data.category" name="category" value="{{ category.id }}" ng-checked="post.data.category.id === category.id"> {{ category.name }}
+      </div>
+    </div>
+  </div>
+
   <input type="submit" class="btn btn-default" value="Submit Post" ng-disabled="postForm.$invalid">
 </form>
