@@ -1,4 +1,4 @@
-function PostsService($http, $state) {
+function PostsService($http, $state, Flash) {
   var ctrl = this;
 
   ctrl.getPosts = function () {
@@ -18,6 +18,10 @@ function PostsService($http, $state) {
     return $http.post('/posts.json', postData)
     .success(function (res) {
       $state.go('home.post', { id: res.id });
+      ctrl.successAlert();
+    })
+    .error(function (err) {
+      ctrl.errorAlert(err);
     });
     ctrl.title = '';
     ctrl.content = '';
@@ -32,10 +36,24 @@ function PostsService($http, $state) {
     return $http.patch('/posts/' + id + '.json', postData)
     .success(function (res) {
       $state.go('home.post', { id: res.id });
+      ctrl.successAlert();
+    })
+    .error(function (err) {
+      ctrl.errorAlert(err);
     });
     ctrl.title = '';
     ctrl.content = '';
   };
+
+  ctrl.successAlert = function () {
+    var message = '<strong>Post Successful</strong>';
+    var id = Flash.create('success', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+  }
+
+  ctrl.errorAlert = function (err) {
+    var message = '<strong>Oops!</strong> ' + err.data.error;
+    var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+  }
 }
 
 angular
