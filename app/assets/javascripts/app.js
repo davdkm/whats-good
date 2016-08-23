@@ -18,6 +18,9 @@ angular
           resolve: {
             posts: function (PostsService) {
               return PostsService.getPosts();
+            },
+            categories: function (CategoriesService) {
+              return CategoriesService.getCategories();
             }
           }
         })
