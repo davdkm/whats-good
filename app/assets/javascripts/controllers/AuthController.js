@@ -1,7 +1,10 @@
-function AuthController($scope, $state, Auth) {
+function AuthController($scope, $state, Auth, Flash) {
   $scope.login = function () {
     Auth.login($scope.user).then(function () {
       $state.go('home');
+      $scope.successAlert();
+    }, function (error) {
+      $scope.errorAlert(error);
     });
   };
 
@@ -10,6 +13,16 @@ function AuthController($scope, $state, Auth) {
       $state.go('home');
     });
   };
+
+  $scope.successAlert = function () {
+      var message = '<strong>Success!</strong> You are logged in.';
+      var id = Flash.create('success', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+  }
+
+  $scope.errorAlert = function (error) {
+      var message = '<strong>Oops!</strong> ' + error.data.error;
+      var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+    }
 }
 
 angular
