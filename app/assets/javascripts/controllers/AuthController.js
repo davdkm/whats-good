@@ -9,18 +9,22 @@ function AuthController($scope, $state, Auth, Flash) {
   };
 
   $scope.register = function () {
-    Auth.register($scope.user).then(function () {
+    Auth.register($scope.user).then(function successCallback() {
       $state.go('home');
+      $scope.successAlert();
+    }, function errorCallback(err) {
+      debugger;
+      $scope.errorAlert(err);
     });
   };
 
   $scope.successAlert = function () {
-      var message = '<strong>Success!</strong> You are logged in.';
+      var message = '<strong>Success!</strong>';
       var id = Flash.create('success', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
   }
 
   $scope.errorAlert = function (error) {
-      var message = '<strong>Oops!</strong> ' + error.data.error;
+      var message = '<strong>Oops!</strong> Something went wrong.';
       var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
     }
 }
