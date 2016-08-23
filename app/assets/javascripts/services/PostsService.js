@@ -16,11 +16,10 @@ function PostsService($http, $state, Flash) {
       category_id: post.category
     };
     return $http.post('/posts.json', postData)
-    .success(function (res) {
+    .then(function successCallback(res) {
       $state.go('home.post', { id: res.id });
       ctrl.successAlert();
-    })
-    .error(function (err) {
+    }, function errorCallback(err) {
       ctrl.errorAlert(err);
     });
     ctrl.title = '';
@@ -34,11 +33,10 @@ function PostsService($http, $state, Flash) {
       category_id: post.category
     };
     return $http.patch('/posts/' + id + '.json', postData)
-    .success(function (res) {
+    .then(function successCallback(res) {
       $state.go('home.post', { id: res.id });
       ctrl.successAlert();
-    })
-    .error(function (err) {
+    }, function errorCallback(err) {
       ctrl.errorAlert(err);
     });
     ctrl.title = '';
