@@ -1,0 +1,14 @@
+<div ng-repeat="category in posts.categories">
+  <label class="input-group label label-default">
+    <input type="checkbox" ng-model="posts.filter[category.name]" />
+    {{ category.name }}
+  </label>
+</div>
+
+<input ng-model="search.$" />
+
+<ul>
+  <li ng-repeat="post in posts.posts | filter: search | filter: posts.filterByCategory">
+    <item id="post.id"></item>
+  </li>
+</ul>

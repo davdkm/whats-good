@@ -14,10 +14,18 @@ angular
         .state('home', {
           url: '/home',
           templateUrl: 'home/_home.html',
-          controller: 'HomeController as home',
+          controller: 'HomeController as home'
+        })
+        .state('home.posts', {
+          url: '/posts',
+          templateUrl: 'home/posts/index.html',
+          controller: 'PostsController as posts',
           resolve: {
             posts: function (PostsService) {
               return PostsService.getPosts();
+            },
+            categories: function (CategoriesService) {
+              return CategoriesService.getCategories();
             }
           }
         })
