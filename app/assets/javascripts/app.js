@@ -3,7 +3,8 @@ angular
     'ui.router',
     'templates',
     'Devise',
-    'ngMessages'
+    'ngMessages',
+    'ngFlash'
   ])
   .config([
     '$stateProvider',
