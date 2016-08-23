@@ -1,23 +1,9 @@
 <div class="container">
-  Posts home
+  <h4>What's Good</h4>
 
   <div ui-view></div>
-
-  <div ng-if="home.home()">
-
-    <div ng-repeat="category in home.categories">
-      <label class="input-group label label-default">
-        <input type="checkbox" ng-model="home.filter[category.name]" />
-        {{ category.name }}
-      </label>
-    </div>
-
-    <input ng-model="search.$" />
-
-    <ul>
-      <li ng-repeat="post in home.posts | filter: search | filter: home.filterByCategory">
-        <item id="post.id"></item>
-      </li>
-    </ul>
+    <div ng-show="home.home()">
+    <h1>Welcome to What's Good</h1>
+    <h3>A simple post creation and rating site.</h3>
   </div>
 </div>
