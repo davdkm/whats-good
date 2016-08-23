@@ -1,4 +1,4 @@
-function PostController(post, Auth, PostsService, $stateParams, categories) {
+function PostController(post, Auth, PostsService, $stateParams, categories, Flash) {
   var ctrl = this;
 
   if (post) {
@@ -29,7 +29,8 @@ function PostController(post, Auth, PostsService, $stateParams, categories) {
     } else if (!$stateParams.id) {
       PostsService.addPost(ctrl.data)
     } else {
-      alert("Oops, you can't do that!")
+      var message = "Oops, you can't do that!";
+      var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
     }
   }
 }
