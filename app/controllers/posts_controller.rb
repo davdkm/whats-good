@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = Post.create(post_params.merge(user_id: current_user.id))
     render json: @post
   end
