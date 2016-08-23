@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Category.create([{:name => 'random'}, {:name => 'funny'}, {:name => 'serious'}, {:name => 'interesting'}, {:name => 'poltical'}])
+category_size = Category.all.size
+
 5.times do
   User.create(
     username: Faker::Internet.user_name,
@@ -19,7 +22,8 @@ end
   Post.create(
   title: Faker::Company.catch_phrase,
   content: Faker::Hipster.paragraph(2, false, 2),
-  author: user
+  author: user,
+  category_id: rand(1..category_size)
   )
 end
 
