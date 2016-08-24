@@ -9,3 +9,7 @@
 .lb-lg {
   font-size: 20px;
 }
+
+.well .white {
+  background-color: white;
+}
