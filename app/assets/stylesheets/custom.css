@@ -13,3 +13,25 @@
 .well .white {
   background-color: white;
 }
+
+blockquote {
+    padding: 6px 16px;
+    border: none;
+    quotes: "\201C" "\201D";
+    display: inline-block;
+    position: relative;
+}
+
+blockquote:before {
+    content: open-quote;
+    font-weight: bold;
+    position:absolute;
+    top:0;
+    left: 1;
+}
+blockquote:after {
+    content: close-quote;
+    font-weight: bold;
+    position:absolute;
+    bottom:0; right: 1;
+}
