@@ -1,3 +1,4 @@
+<div class="well">
 <h1>Post Form</h1><h6>All fields required</h6>
 <form name='postForm' ng-submit="post.save()">
   <div class="input-group" ng-class="{ 'has-error': postForm.title.$touched && postForm.title.$invalid }">
@@ -18,12 +19,13 @@
 
   <div class="input-group" ng-class="{ 'has-error': postform.category.$invalid }">
     <label for="category">Category:</label>
-    <div ng-repeat="category in post.categories">
-      <div class="input-group label label-default">
+    <ul class="list-inline">
+      <li class="input-group label label-default lb-sm"  ng-repeat="category in post.categories">
         <input type="radio" ng-model="post.data.category" name="category" value="{{ category.id }}" ng-checked="post.data.category.id === category.id" required> {{ category.name }}
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 
   <input type="submit" class="btn btn-default" value="Submit Post" ng-disabled="postForm.$invalid">
 </form>
+</div>
