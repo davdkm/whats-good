@@ -4,7 +4,8 @@ angular
     'templates',
     'Devise',
     'ngMessages',
-    'ngFlash'
+    'ngFlash',
+    'angularUtils.directives.dirPagination'
   ])
   .config([
     '$stateProvider',
