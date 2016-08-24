@@ -6,9 +6,13 @@
 </div>
 
 <input ng-model="search.$" />
-
-<ul>
-  <li ng-repeat="post in posts.posts | filter: search | filter: posts.filterByCategory">
-    <item id="post.id"></item>
-  </li>
-</ul>
+<div>
+  <ul>
+    <li dir-paginate="post in posts.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
+      <item id="post.id"></item>
+    </li>
+  </ul>
+</div>
+<div>
+  <dir-pagination-controls></dir-pagination-controls>
+</div>
