@@ -14,11 +14,11 @@
 </div>
 
 <div class="well">
-  <ul>
-    <li dir-paginate="post in posts.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
+  <ol>
+    <li class="well well-sm white" dir-paginate="post in posts.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
       <item id="post.id"></item>
     </li>
-  </ul>
+  </ol>
   <div>
     <dir-pagination-controls></dir-pagination-controls>
   </div>
