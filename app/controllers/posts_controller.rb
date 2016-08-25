@@ -22,6 +22,12 @@ class PostsController < ApplicationController
     render json: @post
   end
 
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy if @post
+    head :no_content
+  end
+
   private
 
     def post_params
