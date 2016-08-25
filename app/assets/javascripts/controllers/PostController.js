@@ -33,6 +33,15 @@ function PostController(post, Auth, PostsService, $stateParams, categories, Flas
       var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
     }
   }
+
+  ctrl.removePost =  function () {
+    if (ctrl.editPost()) {
+      PostsService.deletePost($stateParams.id);
+    } else {
+      var message = "Oops, you can't do that!";
+      var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+    }
+  }
 }
 
 angular
