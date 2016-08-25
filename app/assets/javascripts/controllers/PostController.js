@@ -35,7 +35,7 @@ function PostController(post, Auth, PostsService, $stateParams, categories, Flas
   }
 
   ctrl.removePost =  function () {
-    if (ctrl.editPost()) {
+    if ($stateParams.id && ctrl.editPost()) {
       PostsService.deletePost($stateParams.id);
     } else {
       var message = "Oops, you can't do that!";
