@@ -11,7 +11,7 @@
 
     <div class="collapse navbar-collapse" ng-controller="NavController" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="signedIn()"><a ui-sref="home.posts" ui-sref-active="active">All Posts</a></li>
+        <li><a ui-sref="home.posts" ui-sref-active="active">All Posts</a></li>
         <li ng-show="signedIn()"><a ui-sref="home.newPost" ui-sref-active="active">New Post</a></li>
         <li ng-hide="signedIn()"><a ui-sref="home.login" ui-sref-active="active"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
         <li ng-hide="signedIn()"><a ui-sref="home.register" ui-sref-active="active"><span class="glyphicon glyphicon-user"></span> Register</a></li>
