@@ -1,7 +1,6 @@
 <div class="well">
   <h3>{{ post.data.title }}</h3>
   <span class="label label-default lb-md">{{ post.data.category.name }}</span>
-  <button class="btn btn-default btn-sm" ui-sref="home.editPost({ id: post.data.id })">Edit Post</button></a>
 
   <span><a ui-sref="home.user({ id: post.data.author.id })">{{ post.data.author.username }}</a></span>
   <span>submitted at {{ post.data.created_at | date: 'short' }}</span>
@@ -12,7 +11,10 @@
 
   <span>You rated this post:</span>
   <star-rating value="post.data.user_post_review.rating" post="post.data" user="post.currentUser"></star-rating><span> {{ post.data.user_post_review.rating }} / 5</span>
-
+  <br>
+  <button class="btn btn-default btn-sm" ui-sref="home.editPost({ id: post.data.id })">Edit Post</button>
+  <button class="btn btn-default btn-sm btn-danger" ui-sref="home.deletePost({ id: post.data.id })">Delete Post</button>
+  <br>
   <blockquote class="well white">
     {{ post.data.content }}
   </blockquote>
