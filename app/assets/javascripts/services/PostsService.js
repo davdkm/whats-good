@@ -15,9 +15,9 @@ function PostsService($http, $state, Flash) {
       content: post.content,
       category_id: post.category
     };
-    return $http.post('/posts.json', postData)
+    $http.post('/posts.json', postData)
     .then(function successCallback(res) {
-      $state.go('home.post', { id: res.id });
+      $state.go('home.post', { id: res.data.id });
       ctrl.successAlert();
     }, function errorCallback(err) {
       ctrl.errorAlert(err);
@@ -32,9 +32,9 @@ function PostsService($http, $state, Flash) {
       content: post.content,
       category_id: post.category
     };
-    return $http.patch('/posts/' + id + '.json', postData)
+    $http.patch('/posts/' + id + '.json', postData)
     .then(function successCallback(res) {
-      $state.go('home.post', { id: res.id });
+      $state.go('home.post', { id: res.data.id });
       ctrl.successAlert();
     }, function errorCallback(err) {
       ctrl.errorAlert(err);
@@ -43,8 +43,18 @@ function PostsService($http, $state, Flash) {
     ctrl.content = '';
   };
 
+  ctrl.deletePost = function (id) {
+    $http.delete('/posts/' + id + '.json')
+    .then(function successCallback(res) {
+      $state.go('home.posts');
+      ctrl.successAlert();
+    }, function errorCallback(err) {
+      ctrl.errorAlert(err)
+    })
+  }
+
   ctrl.successAlert = function () {
-    var message = '<strong>Post Successful</strong>';
+    var message = '<strong>Action Successful</strong>';
     var id = Flash.create('success', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
   }
 
