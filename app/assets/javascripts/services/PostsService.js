@@ -39,8 +39,6 @@ function PostsService($http, $state, Flash) {
     }, function errorCallback(err) {
       ctrl.errorAlert(err);
     });
-    ctrl.title = '';
-    ctrl.content = '';
   };
 
   ctrl.deletePost = function (id) {
