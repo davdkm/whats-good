@@ -55,12 +55,12 @@ function PostsService($http, $state, Flash) {
 
   ctrl.successAlert = function () {
     var message = '<strong>Action Successful</strong>';
-    var id = Flash.create('success', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+    var id = Flash.create('success', message, 5000);
   }
 
   ctrl.errorAlert = function (err) {
     var message = '<strong>Oops!</strong> ' + err.data.error;
-    var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+    var id = Flash.create('danger', message, 5000);
   }
 }
 

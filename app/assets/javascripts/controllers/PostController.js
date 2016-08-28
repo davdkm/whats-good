@@ -30,7 +30,7 @@ function PostController(post, Auth, PostsService, $stateParams, categories, Flas
       PostsService.addPost(ctrl.data)
     } else {
       var message = "Oops, you can't do that!";
-      var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+      var id = Flash.create('danger', message, 5000);
     }
   }
 
@@ -39,7 +39,7 @@ function PostController(post, Auth, PostsService, $stateParams, categories, Flas
       PostsService.deletePost($stateParams.id);
     } else {
       var message = "Oops, you can't do that!";
-      var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+      var id = Flash.create('danger', message, 5000);
     }
   }
 }

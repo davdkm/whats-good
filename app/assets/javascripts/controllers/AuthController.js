@@ -13,19 +13,18 @@ function AuthController($scope, $state, Auth, Flash) {
       $state.go('home');
       $scope.successAlert();
     }, function errorCallback(err) {
-      debugger;
       $scope.errorAlert(err);
     });
   };
 
   $scope.successAlert = function () {
       var message = '<strong>Success!</strong>';
-      var id = Flash.create('success', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+      var id = Flash.create('success', message, 5000);
   }
 
   $scope.errorAlert = function (error) {
       var message = '<strong>Oops!</strong> Something went wrong.';
-      var id = Flash.create('danger', message, 5000, {class: 'custom-class', id: 'custom-id'}, true);
+      var id = Flash.create('danger', message, 5000);
     }
 }
 
