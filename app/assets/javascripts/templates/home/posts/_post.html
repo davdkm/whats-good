@@ -13,10 +13,7 @@
   <star-rating value="post.data.user_post_review.rating" post="post.data" user="post.currentUser"></star-rating><span> {{ post.data.user_post_review.rating }} / 5</span>
   <br>
   <button class="btn btn-default btn-sm" ui-sref="home.editPost({ id: post.data.id })">Edit Post</button>
-<<<<<<< HEAD
   <span ng-if="post.currentUser"><button class="btn btn-default btn-sm btn-danger" ng-show="post.editPost()" ng-click="post.removePost()">Delete Post</button></span>
-=======
->>>>>>> c75d2c756235f6452c225ed8c2cb724acdb79975
   <br>
   <blockquote class="well white">
     {{ post.data.content }}
