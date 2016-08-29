@@ -4,6 +4,10 @@ function CategoriesService($http) {
   ctrl.getCategories = function () {
     return $http.get('/categories.json');
   }
+
+  ctrl.getCategory = function (id) {
+    return $http.get('/categories/' + id + '.json')
+  }
 }
 
 angular
