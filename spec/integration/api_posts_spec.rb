@@ -12,4 +12,18 @@ describe "Posts API" do
     # check to make sure the right amount of messages are returned
     expect(json.length).to eq(3)
   end
+
+  it 'retrieves a specific post' do
+    post = FactoryGirl.create(:post)
+    get "/posts/#{post.id}"
+
+    expect(response).to be_success
+
+    # check that the post attributes are the same.
+    expect(json['title']).to eq(post.title)
+    expect(json['content']).to eq(post.content)
+    expect(json['author']['username']).to eq(post.author.username)
+    expect(json['category']['name']).to eq(post.category.name)
+  end
+
 end
