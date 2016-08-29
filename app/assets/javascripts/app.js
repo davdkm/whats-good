@@ -18,6 +18,16 @@ angular
           templateUrl: 'home/_home.html',
           controller: 'HomeController as home'
         })
+        .state('home.category', {
+          url: '/categories/:id',
+          templateUrl: 'home/categories/index.html',
+          controller: 'CategoriesController as categories',
+          resolve: {
+            category: function (CategoriesService, $stateParams) {
+              return CategoriesService.getCategory($stateParams.id);
+            }
+          }
+        })
         .state('home.posts', {
           url: '/posts',
           templateUrl: 'home/posts/index.html',
