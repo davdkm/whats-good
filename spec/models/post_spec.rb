@@ -16,4 +16,8 @@ RSpec.describe Post, type: :model do
   it "has an author" do
     expect(@stub_post.author).to be_kind_of(User)
   end
+
+  it "has a category" do
+    expect(@stub_post.category).to be_kind_of(Category)
+  end
 end
