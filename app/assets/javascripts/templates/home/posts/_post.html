@@ -1,6 +1,6 @@
 <div class="well">
   <h3>{{ post.data.title }}</h3>
-  <span class="label label-default lb-md">{{ post.data.category.name }}</span>
+  <a ui-sref="home.category({ id: post.data.category.id})"><span class="label label-default lb-md">{{ post.data.category.name }}</span></a>
 
   <span><a ui-sref="home.user({ id: post.data.author.id })">{{ post.data.author.username }}</a></span>
   <span>submitted at {{ post.data.created_at | date: 'short' }}</span>
