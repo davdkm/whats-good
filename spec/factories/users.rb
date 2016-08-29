@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :user, aliases: [:author, :commenter] do
     password "password"
     username "testUser"
-    email { "#{username}@example.com".downcase }
+    sequence(:email) { |n| "#{username}#{n}@example.com" }
   end
 end

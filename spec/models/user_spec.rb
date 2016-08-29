@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @stub_user = build_stubbed(:user)
+    @stub_user = build_stubbed(:user, :email => 'testuser@example.com')
   end
 
   it "has a user name" do
