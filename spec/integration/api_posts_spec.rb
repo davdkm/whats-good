@@ -6,11 +6,9 @@ describe "Posts API" do
 
     get '/posts'
 
-    json = JSON.parse(response.body)
-
     # test for the 200 status-code
     expect(response).to be_success
-    
+
     # check to make sure the right amount of messages are returned
     expect(json.length).to eq(3)
   end
