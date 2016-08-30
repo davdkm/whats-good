@@ -8,10 +8,13 @@ angular
     'angularUtils.directives.dirPagination'
   ])
   .config([
+    '$httpProvider',
     '$stateProvider',
     '$urlRouterProvider',
-    function ($stateProvider, $urlRouterProvider) {
-
+    function ($httpProvider, $stateProvider, $urlRouterProvider) {
+      $httpProvider
+        .defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+        
       $stateProvider
         .state('home', {
           url: '/home',
