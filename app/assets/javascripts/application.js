@@ -19,6 +19,6 @@
 //= require angular-ui-router
 //= require angular-devise
 //= require angular-flash-alert
-//= require angularUtils-pagination
+//= require angular-utils-pagination
 //= require app
 //= require_tree .
