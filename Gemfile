@@ -39,6 +39,7 @@ gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'active_model_serializers'
 gem 'angular-rails-templates', '1.0.2'
+gem 'bower-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
