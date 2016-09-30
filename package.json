@@ -1,0 +1,11 @@
+{
+  "name": "whats-good",
+  "version": "1.0.0",
+  "dependencies": {
+    "bower": "1.7.9"
+  },
+  "engine": {
+    "node": "6.6.x",
+    "npm": "3.10.x"
+  }
+}
