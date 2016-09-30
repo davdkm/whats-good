@@ -7,6 +7,7 @@ function HomeController($scope, $state) {
   }
 }
 
+HomeController.$inject = ['$scope', '$state'];
 angular
   .module('app')
   .controller('HomeController', HomeController)

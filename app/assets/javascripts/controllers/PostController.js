@@ -40,6 +40,7 @@ function PostController(post, Auth, PostsService, $stateParams, categories, Flas
   }
 }
 
+PostController.$inject = ['post', 'Auth', 'PostsService', '$stateParams', 'categories', 'Flash'];
 angular
   .module('app')
   .controller('PostController', PostController)

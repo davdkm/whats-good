@@ -4,6 +4,7 @@ function UserController(user) {
   ctrl.data = user.data;
 }
 
+UserController.$inject = ['user'];
 angular
   .module('app')
   .controller('UserController', UserController)

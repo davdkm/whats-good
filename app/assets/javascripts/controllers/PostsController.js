@@ -17,6 +17,7 @@ function PostsController(posts, categories, $filter) {
   }
 }
 
+PostsController.$inject = ['posts', 'categories', '$filter'];
 angular
   .module('app')
   .controller('PostsController', PostsController)

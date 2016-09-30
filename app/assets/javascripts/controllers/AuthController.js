@@ -28,6 +28,7 @@ function AuthController($scope, $state, Auth, Flash) {
     }
 }
 
+AuthController.$inject = ['$scope', '$state', 'Auth', 'Flash'];
 angular
   .module('app')
   .controller('AuthController', AuthController);
