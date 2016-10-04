@@ -1,7 +1,7 @@
 <div class="well">
   <ol>
-    <li class="well well-sm white" dir-paginate="category in categories.categories | itemsPerPage: 10">
-      <item id="category.id"></item>
+    <li class="well well-sm white" dir-paginate="category in categories.category | itemsPerPage: 10">
+      <p><a ui-sref="home.category({ id: category.id })">{{ category.name }}</a></p>
     </li>
   </ol>
   <div>
