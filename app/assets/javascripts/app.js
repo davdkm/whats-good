@@ -26,22 +26,22 @@ angular
           templateUrl: 'home/categories/index.html',
           controller: 'CategoriesController as categories',
           resolve: {
-            category: function (CategoriesService, $stateParams) {
+            category: ['CategoriesService', '$stateParams', function (CategoriesService, $stateParams) {
               return CategoriesService.getCategory($stateParams.id);
             }
-          }
+          }]
         })
         .state('home.posts', {
           url: '/posts',
           templateUrl: 'home/posts/index.html',
           controller: 'PostsController as posts',
           resolve: {
-            posts: function (PostsService) {
+            posts: ['PostsService', function (PostsService) {
               return PostsService.getPosts();
-            },
-            categories: function (CategoriesService) {
+            }],
+            categories: ['CategoriesService', function (CategoriesService) {
               return CategoriesService.getCategories();
-            }
+            }]
           }
         })
         .state('home.post', {
@@ -49,9 +49,9 @@ angular
           templateUrl: 'home/posts/_post.html',
           controller: 'PostController as post',
           resolve: {
-            post: function (PostsService, $stateParams) {
+            post: ['PostsService', '$stateParams', function (PostsService, $stateParams) {
               return PostsService.getPost($stateParams.id)
-            },
+            }],
             categories: function () {}
           }
         })
@@ -61,9 +61,9 @@ angular
           controller: 'PostController as post',
           resolve: {
             post: function () {},
-            categories: function (CategoriesService) {
+            categories: ['CategoriesService', function (CategoriesService) {
               return CategoriesService.getCategories();
-            }
+            }]
           },
           onEnter: ['$state', 'Auth', function ($state, Auth) {
             if (Auth.isAuthenticated() === false) {
@@ -76,12 +76,12 @@ angular
           templateUrl: 'home/posts/_form.html',
           controller: 'PostController as post',
           resolve: {
-            post: function (PostsService, $stateParams) {
+            post: ['PostsService', '$stateParams', function (PostsService, $stateParams) {
               return PostsService.getPost($stateParams.id);
-            },
-            categories: function (CategoriesService) {
+            }],
+            categories: ['CategoriesService', function (CategoriesService) {
               return CategoriesService.getCategories();
-            }
+            }]
           },
           onEnter: ['$state', 'Auth', function ($state, Auth) {
             if (Auth.isAuthenticated() === false) {
@@ -94,9 +94,9 @@ angular
           templateUrl: 'home/users/_user.html',
           controller: 'UserController as user',
           resolve: {
-            user: function (UsersService, $stateParams) {
+            user: ['UsersService', '$stateParams', function (UsersService, $stateParams) {
               return UsersService.getUser($stateParams.id);
-            }
+            }]
           }
         })
         .state('home.login', {
