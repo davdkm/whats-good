@@ -5,14 +5,14 @@ var Item = {
     id: '='
   },
   controllerAs: 'item',
-  controller: function (PostsService) {
+  controller: ['PostsService', function (PostsService) {
     var ctrl = this;
 
     PostsService.getPost(this.id)
       .then(function (res) {
         ctrl.data = res.data;
       });
-  }
+  }]
 }
 
 angular
