@@ -1,0 +1,31 @@
+<div class="well">
+<h1>Post Form</h1><h6>All fields required</h6>
+<form name='postForm' ng-submit="post.save()">
+  <div class="input-group" ng-class="{ 'has-error': postForm.title.$touched && postForm.title.$invalid }">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" ng-model="post.data.title" name="title" required=required>
+    <div ng-messages="postForm.title.$error" ng-if="postForm.title.$touched" class="alert alert-danger">
+      <div ng-message="required">Title cannot be empty</div>
+    </div>
+  </div>
+
+  <div class="input-group" ng-class="{ 'has-error': postForm.content.$touched && postForm.content.$invalid }">
+    <label for="content">Content:</label>
+    <input type="text_area" class="form-control" ng-model="post.data.content" name="content" required="required">
+    <div ng-messages="postForm.content.$error" ng-if="postForm.content.$touched" class="alert alert-danger">
+      <div ng-message="required">Content cannot be blank</div>
+    </div>
+  </div>
+
+  <div class="input-group" ng-class="{ 'has-error': postform.category.$invalid }">
+    <label for="category">Category:</label>
+    <ul class="list-inline">
+      <li class="input-group label label-default lb-sm"  ng-repeat="category in post.categories">
+        <input type="radio" ng-model="post.data.category" name="category" value="{{ category.id }}" ng-checked="post.data.category.id === category.id" required> {{ category.name }}
+      </li>
+    </ul>
+  </div>
+
+  <input type="submit" class="btn btn-default" value="Submit Post" ng-disabled="postForm.$invalid">
+</form>
+</div>

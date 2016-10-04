@@ -34,6 +34,6 @@
     "commit": "3022e1d14a36b3dcf4eb062f77d7eb7e074572c5"
   },
   "_source": "https://github.com/sachinchoolur/angular-flash.git",
-  "_target": "^2.3.0",
+  "_target": "*",
   "_originalSource": "angular-flash-alert"
 }
