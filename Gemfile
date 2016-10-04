@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'angularjs-rails'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
 gem 'omniauth'
