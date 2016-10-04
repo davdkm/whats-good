@@ -72,3 +72,5 @@ gem 'faker'
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end
+
+gem 'rails_12factor', group: :production
