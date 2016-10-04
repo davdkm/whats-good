@@ -58,6 +58,7 @@ function StarRating(ReviewsService, $state) {
   }
 }
 
+StarRating.$inject = ['ReviewsService', '$state'];
 angular
   .module('app')
   .directive('starRating', StarRating)
