@@ -62,6 +62,7 @@ function PostsService($http, $state, Flash) {
   }
 }
 
+PostsService.$inject = ['$http', '$state', 'Flash'];
 angular
   .module('app')
   .service('PostsService', PostsService)

@@ -19,6 +19,7 @@ function ReviewsService($http) {
   }
 }
 
+ReviewsService.$inject = ['$http'];
 angular
   .module('app')
   .service('ReviewsService', ReviewsService);

@@ -10,6 +10,7 @@ function CategoriesService($http) {
   }
 }
 
+CategoriesService.$inject = ['$http'];
 angular
   .module('app')
   .service('CategoriesService', CategoriesService)

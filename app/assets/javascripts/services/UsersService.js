@@ -6,6 +6,7 @@ function UsersService($http) {
   };
 }
 
+UsersService.$inject = ['$http'];
 angular
   .module('app')
   .service('UsersService', UsersService);
