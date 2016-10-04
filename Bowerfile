@@ -1,0 +1,8 @@
+asset 'bootstrap'
+asset 'angular'
+asset 'angular-utils-pagination'
+asset 'angular-ui-router'
+asset 'angular-ui-bootstrap'
+asset 'angular-flash-alert'
+asset 'angular-message'
+asset 'AngularDevise'
