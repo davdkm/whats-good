@@ -21,4 +21,8 @@
 //= require angular-flash-alert
 //= require angular-utils-pagination
 //= require app
-//= require_tree .
+//= require_tree ./templates
+//= require_tree ./components
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require_tree ./services
