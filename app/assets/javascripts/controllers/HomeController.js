@@ -5,10 +5,6 @@ function HomeController($scope, $state) {
   ctrl.home = function () {
     return $state.current.name === 'home';
   }
-
-  if(typeof($.fn.popover) != 'undefined'){
-    alert('Bootstrap appears to be loaded')
-}
 }
 
 HomeController.$inject = ['$scope', '$state'];
