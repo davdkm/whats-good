@@ -28,8 +28,8 @@ angular
           resolve: {
             category: ['CategoriesService', '$stateParams', function (CategoriesService, $stateParams) {
               return CategoriesService.getCategory($stateParams.id);
-            }
-          }]
+            }]
+          }
         })
         .state('home.posts', {
           url: '/posts',
