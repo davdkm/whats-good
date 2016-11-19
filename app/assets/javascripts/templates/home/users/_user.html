@@ -1,11 +1,13 @@
 <h4>{{ user.data.username}}</h4>
 
 <h4>Posts submitted:</h4>
-<ul>
-  <li ng-repeat="post in user.data.posts">
-    <a ui-sref="home.post({ id: post.id })">{{ post.title }}</a>
-    <div>
-      submitted at {{ post.created_at | date: 'short' }}
-    </div>
-  </li>
-</ul>
+<div class="well">
+  <ol>
+    <li class="well well-sm white" dir-paginate="post in user.data.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
+      <item id="post.id"></item>
+    </li>
+  </ol>
+  <div>
+    <dir-pagination-controls></dir-pagination-controls>
+  </div>
+</div>
