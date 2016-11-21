@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def show
     @review = Review.find_by(id: params[:id])
