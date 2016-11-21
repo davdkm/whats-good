@@ -1,13 +1,14 @@
-<h4>{{ user.data.username}}</h4>
-
-<h4>Posts submitted:</h4>
-<div class="well">
-  <ol>
-    <li class="well well-sm white" dir-paginate="post in user.data.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
-      <item id="post.id"></item>
-    </li>
-  </ol>
-  <div>
-    <dir-pagination-controls></dir-pagination-controls>
+<div class="section">
+  <h4>{{ user.data.username}}</h4>
+  <h4>Posts submitted:</h4>
+  <div class="well">
+    <ol>
+      <li class="well well-sm white" dir-paginate="post in user.data.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
+        <item id="post.id"></item>
+      </li>
+    </ol>
+    <div>
+      <dir-pagination-controls></dir-pagination-controls>
+    </div>
   </div>
 </div>
