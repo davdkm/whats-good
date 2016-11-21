@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">What's Good</a>
+    </div>
+
+    <div class="collapse navbar-collapse" ng-controller="NavController" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="home.posts" ui-sref-active="active">All Posts</a></li>
+        <li ng-show="signedIn()"><a ui-sref="home.newPost" ui-sref-active="active">New Post</a></li>
+        <li ng-hide="signedIn()"><a ui-sref="home.login" ui-sref-active="active"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        <li ng-hide="signedIn()"><a ui-sref="home.register" ui-sref-active="active"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+        <li ng-show="signedIn()"><a ui-sref="home.user({ id: user.id })">{{ user.username }}</a></li>
+        <li ng-show="signedIn()"><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
