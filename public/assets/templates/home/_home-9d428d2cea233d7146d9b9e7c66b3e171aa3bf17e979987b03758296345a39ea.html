@@ -1,0 +1,16 @@
+<div class="container">
+  <flash-message duration="5000" show-close="true" on-dismiss="myCallback(flash);"></flash-message>
+
+  <div ui-view></div>
+    <div ng-show="home.home()" class="col-md-12 text-center">
+      <div class="jumbotron">
+        <h1 class="display-3">What's Good</h1>
+        <p class="lead">A simple post creation and rating site.</p>
+        <hr class="m-y-2">
+        <p>Start creating and rating posts!</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" ui-sref="home.posts" role="button">See Posts</a>
+        </p>
+      </div>
+  </div>
+</div>
