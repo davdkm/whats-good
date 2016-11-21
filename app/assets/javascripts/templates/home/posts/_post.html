@@ -15,10 +15,10 @@
   <a ui-sref="home.category({ id: post.data.category.id})"><span class="label label-default lb-md">{{ post.data.category.name }}</span></a>
 
 
-  <div ng-show="post.data.avg_rating">
-    Avg Rating: {{ post.data.avg_rating }}
-     <span ng-show="post.currentUser"> | You rated this:
-     <star-rating value="post.data.user_post_review.rating" post="post.data" user="post.currentUser"></star-rating><span> {{ post.data.user_post_review.rating }} / 5</span>
+  <div>
+    <span>Avg Rating: {{ post.data.avg_rating || 'unrated' }}</span>
+    <span ng-show="post.currentUser"> | You rated this:
+    <star-rating value="post.data.user_post_review.rating" post="post.data" user="post.currentUser"></star-rating><span> {{ post.data.user_post_review.rating }} / 5</span>
      </span>
   </div>
   <hr>
