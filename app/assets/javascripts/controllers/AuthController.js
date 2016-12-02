@@ -1,8 +1,7 @@
 function AuthController($scope, $state, Auth, Flash) {
   $scope.login = function () {
-    Auth.login($scope.user).then(function () {
+    Auth.login($scope.user).then(function (res) {
       $state.go('home');
-      $scope.successAlert();
     }, function (error) {
       $scope.errorAlert(error);
     });
@@ -17,8 +16,8 @@ function AuthController($scope, $state, Auth, Flash) {
     });
   };
 
-  $scope.successAlert = function () {
-      var message = '<strong>Success!</strong>';
+  $scope.successAlert = function (res) {
+      var message = '<strong>Welcome back ' + res.username + '</strong>';
       var id = Flash.create('success', message, 5000);
   }
 
