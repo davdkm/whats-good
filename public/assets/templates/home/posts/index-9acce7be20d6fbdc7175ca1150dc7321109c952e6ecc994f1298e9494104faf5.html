@@ -1,0 +1,25 @@
+<section>
+  <ul class="list-inline">
+    <li ng-repeat="category in posts.categories">
+      <label class="input-group label label-default lb-sm">
+        <input type="checkbox" ng-model="posts.filter[category.name]" />
+        {{ category.name }}
+      </label>
+    </li>
+  </ul>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Search</span>
+    <input ng-model="search.$" class="form-control" placeholder="category, content, or author"/>
+  </div>
+</section>
+
+<section>
+  <ol>
+    <li class="well well-sm white" dir-paginate="post in posts.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
+      <item id="post.id"></item>
+    </li>
+  </ol>
+  <div>
+    <dir-pagination-controls></dir-pagination-controls>
+  </div>
+</section>
