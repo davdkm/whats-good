@@ -16,7 +16,9 @@ function PostController(post, Auth, PostsService, $stateParams, categories, Flas
   })
 
   ctrl.editPost = function () {
-    return ctrl.currentUser.id === ctrl.data.author.id
+    if (ctrl.currentUser) {
+      return ctrl.currentUser.id === ctrl.data.author.id
+    }
   }
 
   ctrl.save = function () {

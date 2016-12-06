@@ -1,4 +1,4 @@
-<div class="well">
+<section>
   <ol>
     <li class="well well-sm white" dir-paginate="category in categories.category | itemsPerPage: 10">
       <p><a ui-sref="home.category({ id: category.id })">{{ category.name }}</a></p>
@@ -7,4 +7,4 @@
   <div>
     <dir-pagination-controls></dir-pagination-controls>
   </div>
-</div>
+</section>

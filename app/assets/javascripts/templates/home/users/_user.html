@@ -3,7 +3,7 @@
 </div>
 
 <h4>Posts submitted:</h4>
-<div class="well">
+<section>
   <ol>
     <li class="well well-sm white" dir-paginate="post in user.data.posts | filter: search | filter: posts.filterByCategory | itemsPerPage: 10">
       <item id="post.id"></item>
@@ -12,4 +12,4 @@
   <div>
     <dir-pagination-controls></dir-pagination-controls>
   </div>
-</div>
+</section>

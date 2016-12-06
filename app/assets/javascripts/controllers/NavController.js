@@ -1,4 +1,4 @@
-function NavController($scope, Auth) {
+function NavController($scope, $state, Auth) {
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
 
@@ -14,12 +14,13 @@ function NavController($scope, Auth) {
     $scope.user = user;
   });
 
-  $scope.$on()('devise:logout', function (e, user) {
+  $scope.$on('devise:logout', function (e, user) {
     $scope.user = {};
+    $state.go('home');
   });
 }
 
-NavController.$inject = ['$scope', 'Auth'];
+NavController.$inject = ['$scope', '$state', 'Auth'];
 angular
   .module('app')
   .controller('NavController', NavController);
